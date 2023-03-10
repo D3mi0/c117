@@ -1,11 +1,9 @@
 import os
 import cv2
 
-
 path = "Images/"
 
 images = []
-
 
 for file in os.listdir(path):
     name, ext = os.path.splitext(file)
@@ -19,7 +17,6 @@ for file in os.listdir(path):
 print(len(images))
 count = len(images)
 
-
 frame = cv2.imread(images[0])
 height, width, layers = frame.shape
 size = (width,height)
@@ -30,5 +27,5 @@ for i in range(0,count):
      frame = cv2.imread(images[i])
      out.write(frame)
     
-out.release() # releasing the video generated
+out.release() 
 print("done")
